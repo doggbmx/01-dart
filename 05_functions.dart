@@ -3,6 +3,7 @@ void main() {
   // esto lanzara un error
 //   print('Suma: ${addTwoNumbers(10,'20')}');
   print('Suma: ${addTwoNumbers(10, 20)}');
+  print(greetPerson(name: 'Manu', message: 'Hi,'));
 }
 
 String greetEveryone() => 'Hello everyone!';
@@ -19,4 +20,10 @@ int addTwoNumbersOptionar(int a, [int b = 0]) {
   // chupeteamos la linea de arriba
 //   b??=0;// chupets
   return a + b;
+}
+
+// al ponerlo entre llaves los hacemos opcionales default,
+// a menos q le pongamos required
+String greetPerson({required String name, String message = 'Hola,'}) {
+  return '$message $name';
 }
