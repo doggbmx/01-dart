@@ -18,7 +18,7 @@ void main() {
   // de esta manera podemos eliminar valores duplicados de una lista
   print('List original: ${numbers.toSet().toList()}');
 
-  final numbersGreaterThan5 = numbers.where((num) {
+  final numbersGreaterThan5 = numbers.where((int num) {
     return num > 5; // true
   });
 
