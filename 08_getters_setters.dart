@@ -1,7 +1,7 @@
 void main() {
-  final mySquare = Square(side: 10);
+  final mySquare = Square(side: -10);
 
-  mySquare._side = 5;
+//   mySquare._side = 5;
 
   print('area: ${mySquare.area}');
 }
@@ -9,7 +9,9 @@ void main() {
 class Square {
   double _side;
 
-  Square({required double side}) : _side = side;
+  Square({required double side})
+      : assert(side > 0, 'side must be positive'),
+        _side = side;
 
   double get area => _side * _side;
 
