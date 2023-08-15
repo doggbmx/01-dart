@@ -1,6 +1,6 @@
 void main() {
-  final Hero wolverine = Hero('Logan', 'Regeneracion');
-  print(wolverine);
+  final Hero wolverine = Hero(name: 'Logan', power: 'Regeneracion');
+  print(wolverine.toString());
 }
 
 class Hero {
@@ -8,10 +8,16 @@ class Hero {
   String power;
 
   // another way of constructor
-  Hero(this.name, this.power);
+  Hero({required this.name, this.power = 'Sin poder'});
 
   // I think this way is better
 //   Hero( String pName, String pPower) :
 //     name = pName,
 //     power = pPower;
+
+  // vamos a sobreescribir un metodo .toString()
+  @override
+  String toString() {
+    return 'name: $name, power: $power';
+  }
 }
